@@ -14,6 +14,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  /* tira a barra de rolagem */
 }
 
 body {
@@ -33,6 +34,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1 {
+  border: 2px solid slategray;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
 }
 
 @media (prefers-color-scheme: dark) {
