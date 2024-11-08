@@ -1,10 +1,10 @@
-const Header = () => {
+const Footer = () => {
     return (
         <main>
-            <h1>Yeet2</h1>
-            <p>nitroglicerina</p>
+            <h1>Senku daora</h1>
+            <p>seijin</p>
         </main>
     )
 }
 
-export default Header
+export default Footer
