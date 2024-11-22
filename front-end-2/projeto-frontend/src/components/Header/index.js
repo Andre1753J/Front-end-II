@@ -1,20 +1,13 @@
-// const Header = () => {
-//     return (
-//         <main>
-//             <h1>Yeet2</h1>
-//             <p>nitroglicerina</p>
-//         </main>
-//     )
-// }
-// export default Header
 import Link from "next/link"
 import styles from "./Header.module.css";
+import Image from "next/image";
 
 export default function Header() {
     return (
         <header>
             <nav>
                 <ul className={styles.list}>
+                    <Image className={styles.img} src='/images/iconSenku.jpg' width={100} height={100}/>
                     <li className={styles.lit}>
                         <Link href='/'>Holmes</Link>
                     </li>
