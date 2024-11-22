@@ -16,7 +16,7 @@ export default function Header() {
             <nav>
                 <ul className={styles.list}>
                     <li className={styles.lit}>
-                        <Link href='/'>Home</Link>
+                        <Link href='/'>Holmes</Link>
                     </li>
                     <li className={styles.lit}>
                         <Link href='/sobre'>Sobre</Link>
