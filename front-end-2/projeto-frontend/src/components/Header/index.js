@@ -35,6 +35,9 @@ export default function Header() {
                     <li className={styles.lit}>
                         <Link href='/state'>State</Link>
                     </li>
+                    <li className={styles.lit}>
+                        <Link href='/listas'>Listas</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
