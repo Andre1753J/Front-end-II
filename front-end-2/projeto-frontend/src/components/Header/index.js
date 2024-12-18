@@ -44,6 +44,9 @@ export default function Header() {
                     <li className={styles.lit}>
                         <Link href='/filter'>Filter</Link>
                     </li>
+                    <li className={styles.lit}>
+                        <Link href='/efeitos'>Efects</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
