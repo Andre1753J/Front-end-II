@@ -6,6 +6,8 @@ export default function Efeitos() {
     // const [cont2, setCont2] = useState(0);
     const [ufs, setUfs] = useState([]);
     const [estado, setEstado] = useState('');
+    const [cidades, setCidades] = useState([])
+    const [cidade, setCidade] = useState('');
 
     const getUfs = async () => {
         const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome');
@@ -17,27 +19,42 @@ export default function Efeitos() {
         console.log(data)
     }
 
-    const getMuni = async () => {
-        const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome');
+    const getCidades = async () => {
+        const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado}/municipios?orderBy=nome`);
         if (!response.ok) {
             throw new Error('Erro ao buscar os dados ' + response.statusText)
         }
-        const municipios = await response.json();
+        const data = await response.json();
+        setCidades(data)
+        console.log(data)
     }
 
     useEffect(() => {
         getUfs();
     }, []);
 
+    useEffect(() => {
+        getCidades();
+    }, [estado]);
+
     return (
         <div>
-            <h1>Efects Yeee</h1>
+            <h1>Use Efects Yeee</h1>
             <select
                 onChange={(ev) => setEstado(ev.target.value)}
             >
                 <option value="" key="">Escolha o Estado</option>
                 {ufs.map((uf) => (
                     <option value={uf.id} key={uf.id}>{uf.nome}</option>
+                ))}
+            </select>
+
+            <select
+                onChange={(ev) => setCidade(ev.target.value)}
+            >
+                <option value="" key="">Escolha uma cidade</option>
+                {cidades.map((cidade) => (
+                    <option value={cidade.nome} key={cidade.id}>{cidade.nome}</option>
                 ))}
             </select>
 
